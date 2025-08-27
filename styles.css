@@ -1,0 +1,9 @@
+.producto{
+    border: solid 1px red;
+    height: 175px;
+    width: 175px;
+}
+
+.producto:hover{
+    transform: scale(1.05);
+}
