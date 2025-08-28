@@ -42,6 +42,11 @@ body{
     overflow-y: auto;
 }
 
+.productos{
+    display: flex;
+    
+}
+
 .carta{
     display: flex;
     flex-direction: column;

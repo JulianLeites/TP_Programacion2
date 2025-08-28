@@ -1,5 +1,6 @@
 const carrito = document.getElementById("carrito")
 const menuCarrito = document.getElementById("menuCarrito")
+let cant = 1;
 
 function Carrito(nombre, precio, cantidad){
     this.nombre = nombre;
@@ -30,5 +31,27 @@ document.querySelectorAll(".agregar").forEach(agregar => {
 
         const listaCarrito = document.getElementById("listaCarrito");
         listaCarrito.appendChild(li);
+    })
+})
+
+document.querySelectorAll(".aumentar").forEach(aumentar => {
+    const carta = aumentar.closest(".carta");
+    const cantidad = carta.querySelector(".cantidad");
+    cantidad.textContent = cant;
+    aumentar.addEventListener('click', () => {
+        const carta = aumentar.closest(".carta");
+        cantidad.textContent = parseInt(cantidad.textContent)+1;
+    })
+})
+
+document.querySelectorAll(".disminuir").forEach(disminuir => {
+    const carta = disminuir.closest(".carta");
+    const cantidad = carta.querySelector(".cantidad");
+    cantidad.textContent = cant;
+    disminuir.addEventListener('click', () => {
+        let valor = parseInt(cantidad.textContent);
+        if(valor > 1){
+            cantidad.textContent = parseInt(cantidad.textContent)-1;
+        }
     })
 })
