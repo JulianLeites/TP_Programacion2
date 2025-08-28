@@ -1,0 +1,111 @@
+#IdHeader{
+    background-color: rgb(93, 88, 132);
+    margin-left: 50px;
+    margin-right: 50px;
+    text-align: center;
+    color: rgb(240, 236, 243);
+}
+
+body{
+    background-color: rgb(71, 49, 92);
+}
+
+#carrito{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border: solid red 1px;
+    border-radius: 100%;
+    position: fixed;
+    top: 30px;
+    right: 15px;
+}
+
+#carrito:hover{
+    transform: scale(1.05);
+}
+
+#carrito:active{
+    transform: scale(0.95);
+}
+
+#menuCarrito{
+    display: none;
+    border: solid red 1px;
+    position: fixed;
+    top: 65px;
+    right: 5px;
+    min-width: 170px;
+    max-height: 605px;
+    overflow-y: auto;
+}
+
+.carta{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: solid 1px red;
+    border-radius: 10px;
+    height: 175px;
+    width: 175px;
+    background-color: rgb(141, 133, 179);
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.carta:hover{
+    transform: scale(1.05);
+}
+
+.disminuir{
+    display: inline-block;
+    border: solid red 1px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    width: 25px;
+    text-align: center;
+    user-select: none;
+}
+
+.cantidad{
+    display: inline-block;
+    border: solid red 1px;
+    width: 25px;
+    text-align: center;
+    user-select: none;
+}
+
+.aumentar{
+    display: inline-block;
+    border: solid red 1px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    width: 25px;
+    text-align: center;
+    user-select: none;
+}
+
+.agregar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    border: solid red 1px;
+    border-radius: 10px;
+    cursor: pointer;
+    user-select: none;
+    background-color: rgb(93, 88, 132);
+}
+
+.agregar:hover{
+    transform: scale(1.05);
+}
+
+.aumentar:active,
+.disminuir:active,
+.agregar:active{
+    transform: scale(0.95);
+}
