@@ -4,9 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="/estilos/styles.css">
+  <link rel="stylesheet" href="estilos/styles.css">
 </head>
 <body>
+  <!-- Carrito -->
   <div id="carrito">
     <img src="" alt="C">
   </div>
@@ -14,16 +15,29 @@
     <ul id="listaCarrito">
     </ul>
   </div>
+
+  <!-- Header -->
   <header>
-    <h1 id="IdHeader">Titulo</h1>
+    <h1 id="IdHeader">E-Commerce</h1>
+    <nav>
+      <ul>
+        <li><a href="#AgregarSeccion">Productos</a></li>
+        <li><a href="#AgregarSeccion">Categoria</a></li>
+      </ul>
+    </nav>
   </header>
+
+  <!-- Principal -->
   <main>
     <section>
         <div>
             <img src="" alt="Carrusel Ofertas">
         </div>
     </section>
+
+    <!-- Productos -->
     <section class="productos">
+      <h2>Nuestros Productos</h2>
         <div class="carta">
             <h3 class="nombre">Prod 1</h3>
             <img src="" alt="Prod 1">
@@ -43,10 +57,20 @@
             <p class="agregar">Agregar</p>
         </div>
     </section>
+    <!-- Contacto -->
+     <section id="contacto">
+      <form>
+        <input type="text" placeholder="Tu nombre" required>
+        <input type="email" placeholder="Tu correo" required>
+        <textarea placeholder="Escribe tu mensaje"></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+     </section>
+
   </main>
   <footer>
       
   </footer>
-  <script src="/js.js"></script>
+  <script src="js.js"></script>
 </body>
 </html>
