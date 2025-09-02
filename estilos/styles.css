@@ -131,3 +131,22 @@ body{
   border-radius: 10px;
   scroll-snap-align: center;
 }
+
+/* Pagina Productos Individuales */
+
+.mostrarProducto{
+    display: grid;
+    grid-template-columns: 4fr 2fr;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#imagenesProductos{
+    background-color: red;
+    height: 10px;
+}
+
+.infoProductos{
+    background-color: black;
+    height: 10px;
+}
