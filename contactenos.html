@@ -1,32 +1,54 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contactenos</title>
-    <link rel="stylesheet" href="estilos/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contactenos</title>
+  <link rel="stylesheet" href="estilos/styles.css">
 </head>
 <body>
+  <header>
+    <section id="encabezado">
+      <h1 id="IdHeader">E-Commerce</h1>
+      <button id="botonPerfil">IS</button>
     </section>
-    <!-- Formulario contacto -->
-  <form id="formContacto">
-    <label for="nombre">Nombre:</label>
-    <input type="text" id="nombre" required>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="index.html#ofertas">Ofertas</a></li>
+        <li><a href="index.html#productos">Productos</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <label for="apellido">Apellido:</label>
-    <input type="text" id="apellido" required>
+  <!-- Formulario contacto -->
+  <main>
+    <section id="contacto">
+      <h2>Formulario de Contacto</h2>
+      <form id="formContacto">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" required>
 
-    <label for="telefono">Teléfono:</label>
-    <input type="tel" id="telefono" required>
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" required>
 
-    <label for="email">Email:</label>
-    <input type="email" id="email" required>
+        <label for="telefono">Teléfono:</label>
+        <input type="tel" id="telefono" required>
 
-    <label for="consulta">Consulta:</label>
-    <textarea id="consulta" required></textarea>
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
 
-    <button type="submit">Enviar</button>
-  </form>
-</section>
+        <label for="consulta">Consulta:</label>
+        <textarea id="consulta" required></textarea>
+
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    
+  </footer>
 </body>
 </html>
