@@ -1,8 +1,16 @@
 // Pagina Productos Individuales
 
-const imgProductos = document.getElementById("imagenesProductos");
-const h1 = document.createElement("h1");
+const infoProducto = document.getElementById("infoProductos")
 
-h1.textContent = "Hola";
+productos.forEach(producto => {
+    const div = document.createElement('div');
+    div.classList.add("producto");
 
-imgProductos.appendChild(h1);
+    div.innerHTML = `
+    <h3>${producto.nombre}</h3>
+    <p>${producto.descripcion}</p>
+    <span> $${producto.precio}</span>
+    `;
+
+    infoProducto.appendChild(div)
+});
