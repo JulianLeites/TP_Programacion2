@@ -24,28 +24,30 @@
   <!-- Cuadro Inicio Sesion -->
   <section id="inicioSesion">
     <div id="cerrarIni">Cerrar</div>
-    <form>
+    <form id="formInicioSesion">
       <label for="usuario">Usuario</label>
-      <input type="text" name="usuario">
+      <input type="text" name="usuario" required id="usuarioIngresado">
       <label for="password">Contraseña</label>
-      <input type="password" name="password">
+      <input type="password" name="password" required id="passIngresada">
+      <input type="submit">
       <p>Si no tienes cuenta <span class="botonCambio"> Registrate </span></p>
     </form>
   </section>
   <!-- Cuadro Registrar -->
   <section id="registrar">
     <div id="cerrarReg">Cerrar</div>
-    <form>
+    <form id="formRegistro">
       <label for="nombre">Nombre</label>
-      <input type="text" name="nombre">
+      <input type="text" name="nombre" required id="nombreCuenta">
       <label for="apellido">Apellido</label>
-      <input type="text" name="apellido">
+      <input type="text" name="apellido" required id="apellidoCuenta">
       <label for="usuario">Nombre de Usuario</label>
-      <input type="text" name="usuario">
+      <input type="text" name="usuario" required id="usuarioCuenta">
       <label for="mail">E-mail:</label>
-      <input type="email" name="mail">
+      <input type="email" name="mail" required id="email">
       <label for="password">Contraseña</label>
-      <input type="password" name="password">
+      <input type="password" name="password" required id="password">
+      <input type="submit">
       <p>Si ya tienes cuenta <span class="botonCambio"> Inicia Sesion </span></p>
     </form>
   </section>
