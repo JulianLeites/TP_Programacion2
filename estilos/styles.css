@@ -182,3 +182,61 @@ body{
 .infoProductos{
     background-color: rgb(214, 214, 214);
 }
+
+
+/* Formulario */
+form {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  max-width: 500px;
+  margin: auto;
+  padding: 30px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+form label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+  color: #444;
+}
+
+form input, 
+form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+form input:focus, 
+form textarea:focus {
+  border-color: #007BFF;
+  outline: none;
+}
+
+form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+form button {
+  width: 100%;
+  padding: 12px;
+  background: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+
+form button:hover {
+  background: #0056b3;
+}
