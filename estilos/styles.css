@@ -1,9 +1,44 @@
+#encabezado{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-start: 2;
+    align-items: center;
+    justify-items: center;
+}
+
 #IdHeader{
     background-color: rgb(93, 88, 132);
     margin-left: 50px;
     margin-right: 50px;
     text-align: center;
     color: rgb(240, 236, 243);
+    grid-column: 2;
+}
+
+#inicioSesion{
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
+    border: solid 1px red;
+    border-radius: 10%;
+    background-color: black;
+}
+
+#registrar{
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
+    border: solid 1px red;
+    border-radius: 10%;
+    background-color: black;
 }
 
 body{
@@ -20,7 +55,7 @@ body{
     border-radius: 100%;
     position: fixed;
     top: 30px;
-    right: 15px;
+    right: 30px;
 }
 
 #carrito:hover{
@@ -43,8 +78,7 @@ body{
 }
 
 .productos{
-    display: flex;
-    
+    display: flex;   
 }
 
 .carta{
