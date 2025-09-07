@@ -1,10 +1,11 @@
 //cargar cartas
 const contenedor = document.getElementById("productos")
 
-productos.slice(0, 2).forEach(prod =>{
+productos.slice(0, 2).forEach(prod =>{      //recorre todos los productos, pero con slide solo hasta el 2
     const div = document.createElement('div');
     div.classList.add("carta");
 
+    //forma y contenido de la carta
     div.innerHTML = `
         <a href="productos.html" class="nombre">${prod.nombre}</a>
         <img src="" alt="Prod 1">
