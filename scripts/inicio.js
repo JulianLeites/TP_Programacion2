@@ -1,3 +1,25 @@
+//cargar cartas
+const contenedor = document.getElementById("productos")
+
+productos.slice(0, 2).forEach(prod =>{
+    const div = document.createElement('div');
+    div.classList.add("carta");
+
+    div.innerHTML = `
+        <a href="productos.html" class="nombre">${prod.nombre}</a>
+        <img src="" alt="Prod 1">
+        <p>${prod.precio}</p>
+        <div>
+            <span class="disminuir">-</span>
+            <span class="cantidad">1</span>
+            <span class="aumentar">+</span>
+        </div>
+        <p class="agregar">Agregar</p>
+    `;
+
+    contenedor.appendChild(div)
+})
+
 const carrito = document.getElementById("carrito")
 const menuCarrito = document.getElementById("menuCarrito")
 const listaCarrito = document.getElementById("listaCarrito");

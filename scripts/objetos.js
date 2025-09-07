@@ -1,6 +1,7 @@
 const productos = [
     //Indumentaria
     {
+        id: 1,
         nombre: "Remera Adidas Codes Photoreal Estampada",
         precio: 40000,
         color: "Blanco",
@@ -10,6 +11,7 @@ const productos = [
         imagen: "",
     },
     {
+        id: 2,
         nombre: "Pantalon Nike Club",
         precio: 127000,
         color: "negro",
@@ -19,6 +21,7 @@ const productos = [
         imagen: "",
     },
     {
+        id: 3,
         nombre: "Campera de entrenamiento Puma FLEX STRETCH",
         precio: 120000,
         color: "negro",
@@ -29,6 +32,7 @@ const productos = [
     },
     //Calzado
     {
+        id: 4,
         nombre: "Zapatillas de training Disperse XT",
         precio: 47500,
         color: "rojo",
@@ -38,6 +42,7 @@ const productos = [
         imagen: "",
     },
     {
+        id:5,
         nombre: "Nike Pegasus Premium",
         precio: 380000,
         color: "blanco",
@@ -47,6 +52,7 @@ const productos = [
         imagen: "",
     },
     {
+        id: 6,
         nombre: "Botines Predator Elite para terreno firme con lengüeta abatible",
         precio: 400000,
         color: "blanco",
@@ -57,6 +63,7 @@ const productos = [
     },
     //Accesorios
     {
+        id: 7,
         nombre: "Gorra Running Shmoo",
         precio: 40000,
         color: "blanco",
@@ -66,6 +73,7 @@ const productos = [
         imagen: "assets/imgs/munequeraNike.webp",
     },
     {
+        id: 8,
         nombre: "Nike Swoosh",
         precio: 21000,
         color: "negro",
@@ -75,6 +83,7 @@ const productos = [
         imagen: "",
     },
     {
+        id: 9,
         nombre: "Mochila PUMA.BL",
         precio: 100000,
         color: "rojo",
