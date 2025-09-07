@@ -4,15 +4,25 @@
     grid-column-start: 2;
     align-items: center;
     justify-items: center;
+    background-color: rgb(93, 88, 132);
 }
 
 #IdHeader{
-    background-color: rgb(93, 88, 132);
     margin-left: 50px;
     margin-right: 50px;
     text-align: center;
     color: rgb(240, 236, 243);
     grid-column: 2;
+}
+
+#botonPerfil{
+    border-radius: 100%;
+    background-color: transparent;
+    border: none;
+}
+
+#botonPerfil:hover{
+    transform: scale(1.05);
 }
 
 #inicioSesion{
@@ -248,6 +258,7 @@ form button:hover {
   background: #0056b3;
 }
 
+
 #botonPerfil{
     border-radius: 100%;
     top: 30px;
@@ -268,4 +279,41 @@ form button:hover {
 #iconoSol{
     height: 20px;
     width: 20px;
+=======
+/* -----MODO OSCURO-----*/
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark-mode header,
+body.dark-mode footer {
+  background-color: #1f1f1f;
+  color: #f1f1f1;
+}
+
+body.dark-mode .carta {
+  background: #2a2a2a;
+  border: 1px solid #444;
+}
+
+
+nav ul {
+  list-style: none;
+  display: flex;        /* activa flexbox */
+  gap: 20px;            /* espacio entre elementos */
+  padding: 0;
+  margin: 0;
+  justify-content: space-around;
+}
+
+a{
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover{
+    transform: scale(1.05);
+>>>>>>> 82826b5225e55d187f8895af08ec15471cbc583b
 }
