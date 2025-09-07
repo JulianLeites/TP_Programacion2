@@ -4,15 +4,25 @@
     grid-column-start: 2;
     align-items: center;
     justify-items: center;
+    background-color: rgb(93, 88, 132);
 }
 
 #IdHeader{
-    background-color: rgb(93, 88, 132);
     margin-left: 50px;
     margin-right: 50px;
     text-align: center;
     color: rgb(240, 236, 243);
     grid-column: 2;
+}
+
+#botonPerfil{
+    border-radius: 100%;
+    background-color: transparent;
+    border: none;
+}
+
+#botonPerfil:hover{
+    transform: scale(1.05);
 }
 
 #inicioSesion{
@@ -265,4 +275,15 @@ nav ul {
   gap: 20px;            /* espacio entre elementos */
   padding: 0;
   margin: 0;
+  justify-content: space-around;
+}
+
+a{
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover{
+    transform: scale(1.05);
 }
