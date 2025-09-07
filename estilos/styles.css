@@ -26,6 +26,7 @@
     border: solid 1px red;
     border-radius: 10%;
     background-color: black;
+
 }
 
 #registrar{
@@ -49,14 +50,20 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     border: solid red 1px;
     border-radius: 100%;
     position: fixed;
     top: 30px;
     right: 30px;
+    
+
+    background-image: url(/assets/imgs/imgCarrito.jpeg);
+    background-size: cover;         /* Ajusta la imagen para cubrir todo el elemento */
+    background-position: center;    /* Centra la imagen */
 }
+
 
 #carrito:hover{
     transform: scale(1.05);
@@ -239,4 +246,26 @@ form button {
 
 form button:hover {
   background: #0056b3;
+}
+
+#botonPerfil{
+    border-radius: 100%;
+    top: 30px;
+    right: 30px;
+    height: 40px;
+    width: 40px;
+
+    background-image: url(/assets/imgs/imgInicioSesion.jpg);
+    background-size: cover;         /* Ajusta la imagen para cubrir todo el elemento */
+    background-position: center;    /* Centra la imagen */
+}
+
+#toggleModoClaroOscuro{
+
+    margin-right: 200px;
+    margin-bottom: 20px;
+}
+#iconoSol{
+    height: 20px;
+    width: 20px;
 }
