@@ -8,7 +8,7 @@ productos.slice(0, 2).forEach(prod =>{      //recorre todos los productos, pero 
     //forma y contenido de la carta
     div.innerHTML = `
     <div class="carta">
-        <a href="productos.html" class="nombre">${prod.nombre}</a>
+        <a href="productos.html?id=${prod.id}" class="nombre">${prod.nombre}</a>
         <img src="" alt="Prod 1">
         <p class="precio">${prod.precio}</p>
         <div>
