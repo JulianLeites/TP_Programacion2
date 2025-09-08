@@ -1,21 +1,23 @@
 //cargar cartas
 const contenedor = document.getElementById("productos")
-
+const nombresProductos = JSON.parse(localStorage.getItem("productosNombresGuardados")) || []
 productos.slice(0, 2).forEach(prod =>{      //recorre todos los productos, pero con slide solo hasta el 2
     const div = document.createElement('div');
     div.classList.add("carta");
 
     //forma y contenido de la carta
     div.innerHTML = `
+    <div class="carta">
         <a href="productos.html" class="nombre">${prod.nombre}</a>
         <img src="" alt="Prod 1">
-        <p>${prod.precio}</p>
+        <p class="precio">${prod.precio}</p>
         <div>
             <span class="disminuir">-</span>
             <span class="cantidad">1</span>
             <span class="aumentar">+</span>
         </div>
         <p class="agregar">Agregar</p>
+    </div>
     `;
 
     contenedor.appendChild(div)
@@ -56,24 +58,36 @@ document.querySelectorAll(".agregar").forEach(agregar => {
         localStorage.setItem("cantProductos", JSON.stringify(contadorProducto))
         const carta = agregar.closest(".carta");
         
+         
         const nombre = carta.querySelector(".nombre").textContent;
         const precio = carta.querySelector(".precio").textContent;
-        const cantidad = carta.querySelector(".cantidad").textContent;
+        const cantidad = parseInt(carta.querySelector(".cantidad").textContent);
         
         const producto = new Carrito(nombre, precio, cantidad);
         
-        const li = document.createElement("li");
-        li.textContent = `${producto.nombre} - $${producto.precio} + ${producto.cantidad}`;
+        if(nombresProductos.includes(nombre)){
+            alert("producto repetido")
+        }
+        else{
+            nombresProductos.push(nombre)
+            localStorage.setItem("productosNombresGuardados", JSON.stringify(nombresProductos))
+            
+            const li = document.createElement("li");
+        
+            li.textContent = `${producto.nombre} - $${producto.precio} + ${producto.cantidad}`;
 
-        contenidoLista.push(li.textContent)
-        
-        guardarEnLocalStorage("contenido", contenidoLista)
-        
-        guardarEnLocalStorage("cantProductos", contadorProducto);
+            
+            contenidoLista.push(li.textContent)
+            
+            guardarEnLocalStorage("contenido", contenidoLista)
+            
+            guardarEnLocalStorage("cantProductos", contadorProducto);
 
-        
-        listaCarrito.appendChild(li);
-        guardarEnLocalStorage("producto" + contadorProducto, producto);
+            
+            listaCarrito.appendChild(li);
+            guardarEnLocalStorage("producto" + contadorProducto, producto);
+        }
+       
     })
     
 })
@@ -110,3 +124,4 @@ function cargarLocalStorage(){
         listaCarrito.appendChild(li)
     }
 }
+
