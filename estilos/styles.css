@@ -108,15 +108,15 @@ body{
     align-items: center;
     border: solid 1px red;
     border-radius: 10px;
-    height: 175px;
-    width: 175px;
+    height: 300px;
+    width: 275px;
     background-color: rgb(141, 133, 179);
     margin-left: 5px;
     margin-right: 5px;
 }
 
 .carta a{
-    width: 140px;
+    width: 90%;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -202,7 +202,12 @@ body{
     margin-right: 10px;
 }
 
-#imagenesProductos{
+#imagenesProducto{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
     background-color: red;
 }
 
@@ -325,4 +330,19 @@ a{
 
 a:hover{
     transform: scale(1.05);
+}
+
+.imgProdCarta{
+    max-width: 50%;
+    height: auto;
+    border-radius: inherit;
+}
+
+.nombre{
+    font-size: 18px;
+    text-align: center;
+}
+
+.imgProdInd{
+    max-width: 60%;
 }

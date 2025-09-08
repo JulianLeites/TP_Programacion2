@@ -7,12 +7,16 @@ const id = parseInt(params.get("id"))
 const producto = productos.find(p => p.id === id);
 
 const contenedor = document.getElementById("infoProducto");
+const imagen = document.getElementById("imagenesProducto");
 
 if(producto) {
     contenedor.innerHTML = `
         <h3>${producto.nombre}</h3>
         <p>${producto.descripcion}</p>
         <span> $${producto.precio}</span>
+    `;
+    imagen.innerHTML = `
+        <img src="${producto.imagen}" class="imgProdInd">
     `;
 } else{
     contenedor.innerHTML = "<p>Producto No Encontrado</p>"
