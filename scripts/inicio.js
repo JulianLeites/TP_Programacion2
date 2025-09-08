@@ -1,6 +1,7 @@
 //cargar cartas
 const contenedor = document.getElementById("productos")
 const nombresProductos = JSON.parse(localStorage.getItem("productosNombresGuardados")) || []
+const cantidadesGuardadas = JSON.parse(localStorage.getItem("cantidadesProductos")) || []
 productos.slice(0, 2).forEach(prod =>{      //recorre todos los productos, pero con slide solo hasta el 2
     const div = document.createElement('div');
     div.classList.add("carta");
@@ -29,7 +30,7 @@ const listaCarrito = document.getElementById("listaCarrito");
 let cant = 1;
 let contadorProducto = JSON.parse(localStorage.getItem("cantProductos")) || 0
 
-let contenidoLista = JSON.parse(localStorage.getItem("contenido")) || [];
+const contenidoLista = JSON.parse(localStorage.getItem("contenido")) || [];
 cargarLocalStorage();
 
 
@@ -51,46 +52,64 @@ carrito.addEventListener('click', () => {
 
 
 document.querySelectorAll(".agregar").forEach(agregar => {
-    
+
     agregar.addEventListener('click', () => {
         
-        contadorProducto++; //aumenta cada vez que se agrega algo al carrito
-        localStorage.setItem("cantProductos", JSON.stringify(contadorProducto))
+        localStorage.setItem("cantProductos", JSON.stringify(contadorProducto));
         const carta = agregar.closest(".carta");
         
-         
         const nombre = carta.querySelector(".nombre").textContent;
         const precio = carta.querySelector(".precio").textContent;
-        const cantidad = parseInt(carta.querySelector(".cantidad").textContent);
-        
+        const cantidad = parseInt(carta.querySelector(".cantidad").textContent.trim());
+
         const producto = new Carrito(nombre, precio, cantidad);
         
-        if(nombresProductos.includes(nombre)){
-            alert("producto repetido")
-        }
-        else{
-            nombresProductos.push(nombre)
-            localStorage.setItem("productosNombresGuardados", JSON.stringify(nombresProductos))
+        // Si el producto ya está en el carrito
+        if (nombresProductos.includes(nombre)) {
+            // Encontrar el índice del producto repetido
+            const index = nombresProductos.findIndex(elemento => elemento === nombre);
+
+            // Buscar el li correspondiente en el DOM
+            const li = listaCarrito.children[index];
+
+            // Sumar la nueva cantidad al valor ya guardado
+            const nuevaCantidad = cantidadesGuardadas[index] + cantidad;  
+
+            // Actualizar la cantidad en el arreglo
+            cantidadesGuardadas[index] = nuevaCantidad;
+            localStorage.setItem("cantidadesProductos", JSON.stringify(cantidadesGuardadas))
+            // Actualizar el contenido del li con la nueva cantidad
+            li.textContent = `${producto.nombre} - $${producto.precio} + ${nuevaCantidad}`;
+            contenidoLista[index] = li.textContent
+            localStorage.setItem("contenido", JSON.stringify(contenidoLista))
+          
+            // Actualizar la cantidad del producto en localStorage
+            localStorage.setItem("producto" + index, JSON.stringify(producto));
+
+        } else {
+            // Si el producto no está repetido, lo agregamos como nuevo
+            contadorProducto++; // Aumenta cada vez que se agrega algo al carrito
+            nombresProductos.push(nombre);
+            cantidadesGuardadas.push(cantidad);  // Guardamos la cantidad de este nuevo producto
+            localStorage.setItem("productosNombresGuardados", JSON.stringify(nombresProductos));
             
             const li = document.createElement("li");
-        
             li.textContent = `${producto.nombre} - $${producto.precio} + ${producto.cantidad}`;
+            
+            // Guardar el nuevo contenido de la lista en localStorage
+            contenidoLista.push(li.textContent);
+            guardarEnLocalStorage("contenido", contenidoLista);
 
-            
-            contenidoLista.push(li.textContent)
-            
-            guardarEnLocalStorage("contenido", contenidoLista)
-            
-            guardarEnLocalStorage("cantProductos", contadorProducto);
-
-            
+            // Añadir el nuevo li a la lista del carrito
             listaCarrito.appendChild(li);
             guardarEnLocalStorage("producto" + contadorProducto, producto);
         }
-       
-    })
-    
-})
+
+        // Actualizar la cantidad de productos en el carrito
+        guardarEnLocalStorage("cantProductos", contadorProducto);
+    });
+
+});
 
 document.querySelectorAll(".aumentar").forEach(aumentar => {
     const carta = aumentar.closest(".carta");
