@@ -1,4 +1,4 @@
-const contenedor = document.getElementById("prodIndumentaria")
+const contenedor = document.getElementById("productos")
 const nombresProductos = JSON.parse(localStorage.getItem("productosNombresGuardados")) || []
 productos.filter(prod => prod.categoria === "Indumentaria").forEach(prod =>{      //recorre todos los productos de la categoria
     const div = document.createElement('div');
