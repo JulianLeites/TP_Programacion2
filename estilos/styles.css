@@ -65,13 +65,7 @@ body{
     align-items: center;
     width: 40px;
     height: 40px;
-    border: solid red 1px;
     border-radius: 100%;
-    position: fixed;
-    top: 30px;
-    right: 30px;
-    
-
     background-image: url(/assets/imgs/imgCarrito.jpeg);
     background-size: cover;         /* Ajusta la imagen para cubrir todo el elemento */
     background-position: center;    /* Centra la imagen */
@@ -276,8 +270,6 @@ form button:hover {
 
 #botonPerfil{
     border-radius: 100%;
-    top: 30px;
-    right: 30px;
     height: 40px;
     width: 40px;
 
@@ -354,4 +346,60 @@ a:hover{
     font-weight: bold;
     border-radius: 2px;
     border-color: red;
+}
+
+/* Contenedor de íconos (carrito + perfil) */
+.iconos-header {
+  display: flex;
+  gap: 15px;
+  justify-content: flex-end;
+  align-items: center;
+  grid-column: 3; /* para que quede en la 3ra columna del grid del header */
+  margin-right: 30px;
+}
+
+/* Unificamos tamaño para ambos botones */
+#botonPerfil,
+#carrito {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  border: none;
+  cursor: pointer;
+}
+
+/* Estilo individual de cada botón */
+#botonPerfil {
+  background-image: url(/assets/imgs/imgInicioSesion.jpg);
+}
+
+#carrito {
+  background-image: url(/assets/imgs/imgCarrito.jpeg);
+}
+
+#botonDark {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;        /* lo hace redondo */
+  border: none;
+  background-color: rgb(179, 177, 196); /* color personalizado */
+  color: white;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  cursor: pointer;
+  z-index: 1000;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+#botonDark:hover {
+  transform: scale(1.1);
+  background-color: #5a4a85;
 }

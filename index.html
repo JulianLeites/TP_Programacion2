@@ -9,7 +9,6 @@
 </head>
 <body>
   <!-- Carrito -->
-  <button id="carrito" class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"></button>
   <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
     <div class="offcanvas-header">
       <h5 class="offcanvas-title" id="offcanvasRightLabel"></h5>
@@ -56,9 +55,9 @@
   <header>
     <section id="encabezado">
       <h1 id="IdHeader">E-Commerce</h1>
-      <div>
-        <button id="botonPerfil"></button>
-        <button id="botonDark" class="btn btn-secondary">🌙</button>
+      <div class="iconos-header">
+        <button id="botonPerfil" aria-label="Iniciar sesión"></button>
+        <button id="carrito" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" aria-label="Carrito"></button>
       </div>
     </section>
     <nav>
@@ -107,6 +106,7 @@
   </main>
   <footer>
       <li><a href="contactenos.html">Contactenos</a></li>
+      <button id="botonDark" class="btn btn-secondary">🌙</button>
   </footer>
   <script src="scripts/objetos.js"></script>
   <script src="scripts/inicio.js"></script>
