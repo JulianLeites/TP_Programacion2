@@ -8,10 +8,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const apellido = document.getElementById("apellido").value.trim();
     const telefono = document.getElementById("telefono").value.trim();
     const email = document.getElementById("email").value.trim();
+    const motivo = document.getElementById("motivo").value;
     const consulta = document.getElementById("consulta").value.trim();
 
     // Validación de campos vacíos
-    if (!nombre || !apellido || !telefono || !email || !consulta) {
+    if (!nombre || !apellido || !telefono || !email || !motivo || !consulta) {
       alert("Por favor complete todos los campos.");
       return;
     }

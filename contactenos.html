@@ -28,31 +28,41 @@
 
   <!-- Formulario contacto -->
   <main>
-    <section id="contacto">
-      <h2>Formulario de Contacto</h2>
-      <form id="formContacto">
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" required>
+  <section id="contacto">
+    <h2>Formulario de Contacto</h2>
+    <form id="formContacto">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" required>
 
-        <label for="apellido">Apellido:</label>
-        <input type="text" id="apellido" required>
+      <label for="apellido">Apellido:</label>
+      <input type="text" id="apellido" required>
 
-        <label for="telefono">Teléfono:</label>
-        <input type="tel" id="telefono" required>
+      <label for="telefono">Teléfono:</label>
+      <input type="tel" id="telefono" required>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" required>
+      <label for="email">Email:</label>
+      <input type="email" id="email" required>
 
-        <label for="consulta">Consulta:</label>
-        <textarea id="consulta" required></textarea>
+      <label for="motivo">Motivo de la consulta:</label>
+      <select id="motivo" required>
+        <option value="">Selecciona un motivo</option>
+        <option value="producto-defectuoso">Producto defectuoso</option>
+        <option value="problema-envio">Problema con el envío</option>
+        <option value="no-recibi-pedido">No recibí mi pedido</option>
+        <option value="devolucion">Quiero hacer una devolución</option>
+        <option value="otro">Descripcion</option>
+      </select>
 
-        <button type="submit">Enviar</button>
-      </form>
-    </section>
-  </main>
+      <label for="consulta">Consulta:</label>
+      <textarea id="consulta" required></textarea>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+</main>
 
   <footer>
-    
+    <p>Pagina diseñada por Francisco, Julian y Mateo, estudiantes de la UTN</p>
   </footer>
   <script src="scripts/contacto.js"></script>
   <script src="scripts/darkmode.js"></script>

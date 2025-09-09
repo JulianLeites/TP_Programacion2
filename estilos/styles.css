@@ -213,6 +213,11 @@ body{
 
 
 /* Formulario */
+#contacto h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: rgb(49, 48, 48);
+}
 form {
   background: #ffffff;
   border: 1px solid #ddd;
@@ -231,7 +236,8 @@ form label {
 }
 
 form input, 
-form textarea {
+form textarea,
+form select {
   width: 100%;
   padding: 12px;
   margin-bottom: 15px;
@@ -242,7 +248,8 @@ form textarea {
 }
 
 form input:focus, 
-form textarea:focus {
+form textarea:focus,
+form select:focus {
   border-color: #007BFF;
   outline: none;
 }
@@ -251,6 +258,7 @@ form textarea {
   min-height: 100px;
   resize: vertical;
 }
+
 form button {
   width: 100%;
   padding: 12px;
@@ -264,10 +272,10 @@ form button {
   transition: background 0.3s;
 }
 
-
 form button:hover {
   background: #0056b3;
 }
+
 
 
 #botonPerfil{
