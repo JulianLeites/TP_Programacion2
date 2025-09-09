@@ -303,7 +303,7 @@ body.dark-mode .carta {
   background: #2a2a2a;
   border: 1px solid #444;
 }
-body.dark-mode div .disminuir, .cantidad, .aumentar, .agregar, #offcanvasRight {
+body.dark-mode div .disminuir, body.dark-mode .cantidad, body.dark-mode .aumentar, body.dark-mode .agregar, body.dark-mode #offcanvasRight {
   background-color: #444;
   color:#ddd
 }
