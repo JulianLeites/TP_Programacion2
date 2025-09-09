@@ -92,7 +92,9 @@ body{
 }
 
 #productos{
-    display: flex;   
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
 }
 
 .carta{
@@ -412,4 +414,26 @@ a:hover{
 #botonDark:hover {
   transform: scale(1.1);
   background-color: #5a4a85;
+}
+
+#secHeader{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: red;
+  display: none;
+}
+
+#secHeader .iconos-header{
+  position: fixed;
+  top: 10px;
+  right: 20px;
+}
+
+#secHeader .nav ul{
+  height: 200px;
 }

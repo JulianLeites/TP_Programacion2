@@ -2,14 +2,14 @@
 const contenedor = document.getElementById("productos")
 const nombresProductos = JSON.parse(localStorage.getItem("productosNombresGuardados")) || []
 const cantidadesGuardadas = JSON.parse(localStorage.getItem("cantidadesProductos")) || []
-productos.slice(0, 2).forEach(prod =>{      //recorre todos los productos, pero con slide solo hasta el 2
+productos.slice(0, 9).forEach(prod =>{      //recorre todos los productos, pero con slide solo hasta el 2
     const div = document.createElement('div');
     div.classList.add("carta");
 
     //forma y contenido de la carta
     div.innerHTML = `
         <a href="productos.html?id=${prod.id}" class="nombre">${prod.nombre}</a>
-        <img src="" alt="Prod 1">
+        <img src="${prod.imagen}" alt="Prod 1" class="imgProdCarta">
         <p class="precio">${prod.precio}</p>
         <div>
             <span class="disminuir">-</span>
@@ -189,4 +189,31 @@ function cargarLocalStorage(){
     }
 }
 
+const mainHeader = document.getElementById("mainHeader");
+const secHeader = document.getElementById("secHeader");
+const ubiBotones = document.getElementById("secHeaderBotones")
+const botones = mainHeader.querySelector(".iconos-header")
+// const perfil = document.getElementById("botonPerfil");
+// const nav = document.getElementById("nav");
 
+const navClonado = nav.cloneNode(true);
+const botonesClonados = botones.cloneNode(true)
+// const carritoClonado = carrito.cloneNode(true);
+// const perfilClonado = perfil.cloneNode(true)
+
+secHeader.appendChild(navClonado);
+secHeader.appendChild(botonesClonados)
+// ubiBotones.appendChild(carritoClonado);
+// ubiBotones.appendChild(perfilClonado);
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            secHeader.style.display = "none"
+        } else {
+            secHeader.style.display = "block"
+        }
+    })
+})
+
+observer.observe(mainHeader)
