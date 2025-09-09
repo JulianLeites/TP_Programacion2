@@ -71,7 +71,9 @@ document.querySelectorAll(".agregar").forEach(agregar => {
 
             // Buscar el li correspondiente en el DOM
             const li = listaCarrito.children[index];
-
+            const span = document.createElement("span")
+            span.textContent = `X`
+            span.classList.add("eliminarProducto")
             // Sumar la nueva cantidad al valor ya guardado
             const nuevaCantidad = cantidadesGuardadas[index] + cantidad;  
 
@@ -80,7 +82,10 @@ document.querySelectorAll(".agregar").forEach(agregar => {
             localStorage.setItem("cantidadesProductos", JSON.stringify(cantidadesGuardadas))
             // Actualizar el contenido del li con la nueva cantidad
             li.textContent = `${producto.nombre} - $${producto.precio} + ${nuevaCantidad}`;
+            
+            
             contenidoLista[index] = li.textContent
+            li.insertBefore(span, li.firstChild);
             localStorage.setItem("contenido", JSON.stringify(contenidoLista))
           
             // Actualizar la cantidad del producto en localStorage
@@ -94,15 +99,19 @@ document.querySelectorAll(".agregar").forEach(agregar => {
             localStorage.setItem("productosNombresGuardados", JSON.stringify(nombresProductos));
             
             const li = document.createElement("li");
+            const span = document.createElement("span")
+            span.textContent = `X`
+            span.classList.add("eliminarProducto")
+
             li.textContent = `${producto.nombre} - $${producto.precio} + ${producto.cantidad}`;
-            
-            // Guardar el nuevo contenido de la lista en localStorage
             contenidoLista.push(li.textContent);
+            li.insertBefore(span, li.firstChild)
+            // Guardar el nuevo contenido de la lista en localStorage
+            
             guardarEnLocalStorage("contenido", contenidoLista);
 
             // Añadir el nuevo li a la lista del carrito
             listaCarrito.appendChild(li);
-            guardarEnLocalStorage("producto" + contadorProducto, producto);
         }
 
         // Actualizar la cantidad de productos en el carrito
@@ -110,6 +119,39 @@ document.querySelectorAll(".agregar").forEach(agregar => {
     });
 
 });
+
+listaCarrito.addEventListener('click', function(e) {
+    if (e.target.classList.contains('eliminarProducto')) {
+        const li = e.target.closest("li");
+        if (li) {
+
+            // Obtener todos los <li> hermanos (los hijos de la lista)
+            const listaItems = Array.from(listaCarrito.children);
+
+            // Buscar el índice del <li> clicado
+            const index = listaItems.indexOf(li);
+            // Eliminar de arrays
+            contenidoLista.splice(index, 1);
+            cantidadesGuardadas.splice(index, 1);
+            nombresProductos.splice(index, 1);
+
+            // Guardar en localStorage
+            guardarEnLocalStorage("contenido", contenidoLista);
+            guardarEnLocalStorage("cantidadesProductos", cantidadesGuardadas);
+            guardarEnLocalStorage("productosNombresGuardados", nombresProductos);
+
+            // Eliminar el li visual
+            li.remove();
+
+            // Actualizar contador y guardarlo
+            contadorProducto--;
+            guardarEnLocalStorage("cantProductos", contadorProducto);
+
+            alert("Producto eliminado correctamente");
+        }
+    }
+});
+
 
 document.querySelectorAll(".aumentar").forEach(aumentar => {
     const carta = aumentar.closest(".carta");
@@ -139,8 +181,14 @@ function guardarEnLocalStorage(clave, valor) {
 function cargarLocalStorage(){
     for(let i = 0; i < contadorProducto; i++){
         const li = document.createElement("li");
+        const span = document.createElement("span")
+        span.textContent = `X`
+        span.classList.add("eliminarProducto")
         li.textContent = contenidoLista[i]
+      
+        li.insertBefore(span, li.firstChild)
         listaCarrito.appendChild(li)
     }
 }
+
 
