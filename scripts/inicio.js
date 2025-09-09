@@ -8,7 +8,6 @@ productos.slice(0, 2).forEach(prod =>{      //recorre todos los productos, pero 
 
     //forma y contenido de la carta
     div.innerHTML = `
-    <div class="carta">
         <a href="productos.html?id=${prod.id}" class="nombre">${prod.nombre}</a>
         <img src="" alt="Prod 1">
         <p class="precio">${prod.precio}</p>
@@ -18,8 +17,7 @@ productos.slice(0, 2).forEach(prod =>{      //recorre todos los productos, pero 
             <span class="aumentar">+</span>
         </div>
         <p class="agregar">Agregar</p>
-    </div>
-    `;
+        `;
 
     contenedor.appendChild(div)
 })
@@ -29,12 +27,12 @@ const menuCarrito = document.getElementById("menuCarrito")
 const listaCarrito = document.getElementById("listaCarrito");
 let cant = 1;
 let contadorProducto = JSON.parse(localStorage.getItem("cantProductos")) || 0
-
+ //contador para guardar en orden los productos guardados
 const contenidoLista = JSON.parse(localStorage.getItem("contenido")) || [];
 cargarLocalStorage();
 
 
- //contador para guardar en orden los productos guardados
+
     
 function Carrito(nombre, precio, cantidad){
     this.nombre = nombre;
