@@ -4,6 +4,7 @@ const botonCambio = document.getElementById("botonCambio")
 const registrar = document.getElementById("registrar")
 const cerrarReg = document.getElementById("cerrarReg")
 const cerrarIni = document.getElementById("cerrarIni")
+const overlay = document.getElementById("overlay")
 
 document.querySelectorAll(".botonCambio").forEach(boton => {
     boton.addEventListener('click', () => {
@@ -23,16 +24,20 @@ document.querySelectorAll(".botonCambio").forEach(boton => {
 perfil.addEventListener('click', () => {
     if(inicioSesion.style.display === 'none' || inicioSesion.style.display === ""){
         inicioSesion.style.display = "block";
+        overlay.style.display = "block";
     } else {
-        inicioSesion.style.display = 'none';
+        inicioSesion.style.display = "none";
+        overlay.style.display = "none";
     }
 })
 
 cerrarIni.addEventListener('click', () => {
     if(inicioSesion.style.display === 'none' || inicioSesion.style.display === ""){
         inicioSesion.style.display = "block";
+        overlay.style.display = "block";
     } else {
         inicioSesion.style.display = 'none';
+        overlay.style.display = "none";
     }
 })
 
@@ -41,6 +46,7 @@ cerrarReg.addEventListener('click', () => {
         registrar.style.display = "block";
     } else {
         registrar.style.display = 'none';
+        overlay.style.display = "none";
     }
 })
 
