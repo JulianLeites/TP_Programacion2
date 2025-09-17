@@ -94,7 +94,7 @@ document.querySelectorAll(".agregar").forEach(agregar => {
             nombresProductos.push(nombre);
             cantidadesGuardadas.push(cantidad);  // Guardamos la cantidad de este nuevo producto
             localStorage.setItem("productosNombresGuardados", JSON.stringify(nombresProductos));
-            
+            localStorage.setItem("cantidadesProductos", JSON.stringify(cantidadesGuardadas))
             const li = document.createElement("li");
             const span = document.createElement("span")
             span.textContent = `X`
