@@ -58,14 +58,12 @@ document.querySelectorAll(".agregar").forEach(agregar => {
         const nombre = carta.querySelector(".nombre").textContent;
         const precio = carta.querySelector(".precio").textContent;
         const cantidad = parseInt(carta.querySelector(".cantidad").textContent.trim());
-
         const producto = new Carrito(nombre, precio, cantidad);
         
         // Si el producto ya está en el carrito
         if (nombresProductos.includes(nombre)) {
             // Encontrar el índice del producto repetido
             const index = nombresProductos.findIndex(elemento => elemento === nombre);
-
             // Buscar el li correspondiente en el DOM
             const li = listaCarrito.children[index];
             const span = document.createElement("span")
@@ -94,7 +92,7 @@ document.querySelectorAll(".agregar").forEach(agregar => {
             nombresProductos.push(nombre);
             cantidadesGuardadas.push(cantidad);  // Guardamos la cantidad de este nuevo producto
             localStorage.setItem("productosNombresGuardados", JSON.stringify(nombresProductos));
-            
+            localStorage.setItem("cantidadesProductos", JSON.stringify(cantidadesGuardadas))
             const li = document.createElement("li");
             const span = document.createElement("span")
             span.textContent = `X`
