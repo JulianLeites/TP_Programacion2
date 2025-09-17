@@ -36,10 +36,7 @@ header{
     transform: translate(-50%, -50%);
     width: 300px;
     height: 300px;
-    border: solid 1px red;
     border-radius: 10%;
-    background-color: black;
-
 }
 
 #registrar{
@@ -49,10 +46,23 @@ header{
     top: 50%;
     transform: translate(-50%, -50%);
     width: 300px;
-    height: 300px;
-    border: solid 1px red;
+    height: 650px;
     border-radius: 10%;
-    background-color: black;
+}
+
+.cerrarIS{
+  color: black;
+  text-align: right;
+  cursor: pointer;
+}
+
+.botonCambio{
+  color: blue;
+  cursor: pointer;
+}
+
+.msjCambio{
+  color: rgb(168, 168, 168);
 }
 
 body{
