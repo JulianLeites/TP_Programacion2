@@ -53,9 +53,17 @@ header{
 }
 
 .cerrarIS{
+  transform: scale(1);
+  transition: transform 0.2s ease;
+  transform-origin: top right;
   color: black;
   text-align: right;
   cursor: pointer;
+  user-select: none;
+}
+
+.cerrarIS:hover{
+  transform: scale(1.1);
 }
 
 .botonCambio{
@@ -123,6 +131,8 @@ body{
     margin-left: 5px;
     margin-right: 5px;
     z-index: 1;
+    transition: transform 0.2s ease;
+    transform-origin: center;
 }
 
 .carta a{
@@ -174,6 +184,8 @@ body{
     cursor: pointer;
     user-select: none;
     background-color: rgb(93, 88, 132);
+    transition: transform 0.2s ease;
+    transform-origin: center;
 }
 
 .agregar:hover{
@@ -353,6 +365,8 @@ a{
     display: inline-block;
     text-decoration: none;
     color: inherit;
+    transition: transform 0.2s ease;
+    transform-origin: center;
 }
 
 a:hover{
