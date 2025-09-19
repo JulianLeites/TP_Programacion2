@@ -47,6 +47,7 @@ cerrarIni.addEventListener('click', () => {
 
 cerrarReg.addEventListener('click', () => {
     formularioRegistro.reset()
+    mensajeError.style.display = 'none'
     if(registrar.style.display === 'none' || registrar.style.display === ""){
         registrar.style.display = "block";
     } else {
