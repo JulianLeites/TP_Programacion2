@@ -26,6 +26,10 @@ footer  {
   text-align: center;
 }
 
+li{
+  list-style: none;
+}
+
 #encabezado{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -375,9 +379,6 @@ body.dark-mode ul {
   color:#ddd
 }
 
-
-
-
 nav ul {
   list-style: none;
   display: flex;        /* activa flexbox */
@@ -601,5 +602,10 @@ a:hover{
 
   #registrar{
     overflow: auto;
+  }
+
+  .mostrarProducto{
+    display: flex;
+    flex-direction: column;
   }
 }
