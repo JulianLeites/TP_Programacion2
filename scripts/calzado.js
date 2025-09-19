@@ -9,7 +9,7 @@ productos.filter(prod => prod.categoria === "Calzado").forEach(prod =>{      //r
     div.innerHTML = `
         <a href="productos.html?id=${prod.id}" class="nombre">${prod.nombre}</a>
         <img src="" alt="Prod 1">
-        <p class="precio">${prod.precio}</p>
+        <p class="precio">$${prod.precio}</p>
         <div>
             <span class="disminuir">-</span>
             <span class="cantidad">1</span>
@@ -78,7 +78,7 @@ document.querySelectorAll(".agregar").forEach(agregar => {
             cantidadesGuardadas[index] = nuevaCantidad;
             localStorage.setItem("cantidadesProductos", JSON.stringify(cantidadesGuardadas))
             // Actualizar el contenido del li con la nueva cantidad
-            li.textContent = `${producto.nombre} - $${producto.precio} + ${nuevaCantidad}`;
+            li.textContent = `${producto.nombre} - ${producto.precio} + ${nuevaCantidad}`;
             
             
             contenidoLista[index] = li.textContent
@@ -100,7 +100,7 @@ document.querySelectorAll(".agregar").forEach(agregar => {
             span.textContent = `X`
             span.classList.add("eliminarProducto")
 
-            li.textContent = `${producto.nombre} - $${producto.precio} + ${producto.cantidad}`;
+            li.textContent = `${producto.nombre} - ${producto.precio} + ${producto.cantidad}`;
             contenidoLista.push(li.textContent);
             li.insertBefore(span, li.firstChild)
             // Guardar el nuevo contenido de la lista en localStorage

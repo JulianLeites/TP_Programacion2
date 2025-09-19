@@ -79,7 +79,7 @@ document.querySelectorAll(".agregar").forEach(agregar => {
             cantidadesGuardadas[index] = nuevaCantidad;
             localStorage.setItem("cantidadesProductos", JSON.stringify(cantidadesGuardadas))
             // Actualizar el contenido del li con la nueva cantidad
-            li.textContent = `${producto.nombre} - $${producto.precio} + ${nuevaCantidad}`;
+            li.textContent = `${producto.nombre} - ${producto.precio} + ${nuevaCantidad}`;
             
             
             contenidoLista[index] = li.textContent
