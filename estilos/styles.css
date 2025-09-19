@@ -173,6 +173,7 @@ footer  {
     width: 25px;
     text-align: center;
     user-select: none;
+    background-color: var(--btn-agregar);
 }
 
 .cantidad{
@@ -181,6 +182,7 @@ footer  {
     width: 25px;
     text-align: center;
     user-select: none;
+    background-color: var(--btn-agregar);
 }
 
 .aumentar{
@@ -191,6 +193,7 @@ footer  {
     width: 25px;
     text-align: center;
     user-select: none;
+    background-color: var(--btn-agregar);
 }
 
 .agregar{
@@ -372,6 +375,7 @@ body.dark-mode ul {
 
 
 
+
 nav ul {
   list-style: none;
   display: flex;        /* activa flexbox */
@@ -402,6 +406,7 @@ a:hover{
 .nombre{
     font-size: 18px;
     text-align: center;
+    font-weight: bold;
 }
 
 .imgProdInd{
@@ -530,3 +535,5 @@ a:hover{
   background-color: rgba(0,0,0,0.6);
   z-index: 1000;
 }
+
+

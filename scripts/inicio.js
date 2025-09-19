@@ -10,7 +10,7 @@ productos.slice(0, 9).forEach(prod =>{      //recorre todos los productos, pero 
     div.innerHTML = `
         <a href="productos.html?id=${prod.id}" class="nombre">${prod.nombre}</a>
         <img src="${prod.imagen}" alt="Prod 1" class="imgProdCarta">
-        <p class="precio">${prod.precio}</p>
+        <p class="precio">$${prod.precio}</p>
         <div>
             <span class="disminuir">-</span>
             <span class="cantidad">1</span>
