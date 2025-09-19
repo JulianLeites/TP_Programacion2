@@ -20,6 +20,10 @@ body{
     background-color: var(--color-bg);
 }
 
+footer  {
+  text-align: center;
+}
+
 #encabezado{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -466,7 +470,7 @@ a:hover{
 
 #botonDark:hover {
   transform: scale(1.1);
-  background-color: #5a4a85;
+  background-color: #9c90be;
 }
 
 #secHeader{
