@@ -409,12 +409,17 @@ a:hover{
 }
 
 .eliminarProducto{
-    margin-left: 5px;
-    margin-right: 5px;
-    color:red;
-    font-weight: bold;
-    border-radius: 2px;
-    border-color: red;
+  margin-left: 5px;
+  margin-right: 5px;
+  color:red;
+  font-weight: bold;
+  border-radius: 2px;
+  border-color: red;
+  cursor: pointer;
+  transition: transform 0.2s ease
+}
+.eliminarProducto:hover{
+  font-size: 18px;
 }
 
 /* Contenedor de íconos (carrito + perfil) */
