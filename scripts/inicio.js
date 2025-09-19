@@ -102,7 +102,7 @@ document.querySelectorAll(".agregar").forEach(agregar => {
             span.textContent = `X`
             span.classList.add("eliminarProducto")
 
-            li.textContent = `${producto.nombre} - $${producto.precio} + ${producto.cantidad}`;
+            li.textContent = `${producto.nombre} - ${producto.precio} x ${producto.cantidad}`;
             contenidoLista.push(li.textContent);
             li.insertBefore(span, li.firstChild)
             // Guardar el nuevo contenido de la lista en localStorage
