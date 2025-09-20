@@ -79,15 +79,13 @@ document.querySelectorAll(".agregar").forEach(agregar => {
             cantidadesGuardadas[index] = nuevaCantidad;
             localStorage.setItem("cantidadesProductos", JSON.stringify(cantidadesGuardadas))
             // Actualizar el contenido del li con la nueva cantidad
-            li.textContent = `${producto.nombre} - ${producto.precio} + ${nuevaCantidad}`;
+            li.textContent = `${producto.nombre} - ${producto.precio} x ${nuevaCantidad}`;
             
             
             contenidoLista[index] = li.textContent
             li.insertBefore(span, li.firstChild);
             localStorage.setItem("contenido", JSON.stringify(contenidoLista))
           
-            // Actualizar la cantidad del producto en localStorage
-            localStorage.setItem("producto" + index, JSON.stringify(producto));
 
         } else {
             // Si el producto no está repetido, lo agregamos como nuevo
@@ -146,7 +144,6 @@ listaCarrito.addEventListener('click', function(e) {
             contadorProducto--;
             guardarEnLocalStorage("cantProductos", contadorProducto);
 
-            alert("Producto eliminado correctamente");
         }
     }
 });

@@ -72,19 +72,16 @@ document.querySelectorAll(".agregar").forEach(agregar => {
             // Sumar la nueva cantidad al valor ya guardado
             const nuevaCantidad = cantidadesGuardadas[index] + cantidad;  
 
-            // Actualizar la cantidad en el arreglo
+            // Actualizar la cantidad del producto en el localStorage
             cantidadesGuardadas[index] = nuevaCantidad;
             localStorage.setItem("cantidadesProductos", JSON.stringify(cantidadesGuardadas))
             // Actualizar el contenido del li con la nueva cantidad
-            li.textContent = `${producto.nombre} - ${producto.precio} + ${nuevaCantidad}`;
+            li.textContent = `${producto.nombre} - ${producto.precio} x ${nuevaCantidad}`;
             
             
             contenidoLista[index] = li.textContent
             li.insertBefore(span, li.firstChild);
             localStorage.setItem("contenido", JSON.stringify(contenidoLista))
-          
-            // Actualizar la cantidad del producto en localStorage
-            localStorage.setItem("producto" + index, JSON.stringify(producto));
 
         } else {
             // Si el producto no está repetido, lo agregamos como nuevo
@@ -98,7 +95,7 @@ document.querySelectorAll(".agregar").forEach(agregar => {
             span.textContent = `X`
             span.classList.add("eliminarProducto")
 
-            li.textContent = `${producto.nombre} - ${producto.precio} + ${producto.cantidad}`;
+            li.textContent = `${producto.nombre} - ${producto.precio} x ${producto.cantidad}`;
             contenidoLista.push(li.textContent);
             li.insertBefore(span, li.firstChild)
             // Guardar el nuevo contenido de la lista en localStorage

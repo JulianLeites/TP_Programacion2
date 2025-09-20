@@ -32,6 +32,8 @@ footer  {
 
 li{
   list-style: none;
+  padding-left: 15px;
+  padding-bottom: 15px;
 }
 
 #encabezado{
