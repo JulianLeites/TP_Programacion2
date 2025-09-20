@@ -55,6 +55,10 @@ h2{
   font-family: 'Roboto', sans-serif;
 }
 
+.precio{
+  font-weight: bold;
+}
+
 #encabezado{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -290,8 +294,10 @@ h2{
   align-items: center;
 }
 
-.infoProductos{
-    background-color: rgb(214, 214, 214);
+#infoProducto{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 
