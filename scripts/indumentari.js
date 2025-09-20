@@ -8,7 +8,7 @@ productos.filter(prod => prod.categoria === "Indumentaria").forEach(prod =>{    
     //forma y contenido de la carta
     div.innerHTML = `
         <a href="productos.html?id=${prod.id}" class="nombre">${prod.nombre}</a>
-        <img src="" alt="Prod 1">
+        <img src="${prod.imagen}" alt="Prod 1" class="imgProdCarta">
         <p class="precio">$${prod.precio}</p>
         <div>
             <span class="disminuir">-</span>
