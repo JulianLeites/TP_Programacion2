@@ -11,6 +11,10 @@ header{
     background-color: var(--color-header);
 }
 
+header nav{
+  background-color: var(--color-bg);
+}
+
 main{
   background-color: var(--bg-principal);
   padding-top: 15px;
@@ -493,7 +497,7 @@ a:hover{
   top: 0;
   left: 0;
   width: 100%;
-  background-color: var(--color-header);
+  background-color: var(--color-bg);
   display: none;
   z-index: 1010;
 }
