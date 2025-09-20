@@ -70,7 +70,7 @@ const productos = [
         descripcion: "Una gorra clásica de seis paneles, reimaginada y personalizada por Mark Gonzales para adidas Skateboarding, la gorra Shmoo Running presenta una estructura de algodón transpirable, tira ajustable y un diseño exclusivo de The Gonz en 3D con relieve y bordado.",
         categoria: "Accesorios",
         subcategoria: "gorras",
-        imagen: "assets/imgs/munequeraNike.webp",
+        imagen: "",
     },
     {
         id: 8,
@@ -80,7 +80,7 @@ const productos = [
         descripcion: "Confeccionado con una cómoda tela absorbente, el diseño elástico de las muñequeras Nike Swoosh mantiene las manos secas para rendir al máximo cuando el partido se intensifica.",
         categoria: "Accesorios",
         subcategoria: "muñeca",
-        imagen: "",
+        imagen: "assets/imgs/munequeraNike.webp",
     },
     {
         id: 9,

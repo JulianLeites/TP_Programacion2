@@ -256,12 +256,9 @@ li{
 }
 
 #imagenesProducto{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    justify-items: center;
-    align-items: center;
-    background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .infoProductos{
