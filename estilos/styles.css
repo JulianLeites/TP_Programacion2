@@ -121,7 +121,7 @@ h2{
     width: 40px;
     height: 40px;
     border-radius: 100%;
-    background-image: url(/assets/imgs/imgCarrito.jpeg);
+    background-image: url(/assets/iconos/imgCarrito.jpeg);
     background-size: cover;         /* Ajusta la imagen para cubrir todo el elemento */
     background-position: center;    /* Centra la imagen */
 }
@@ -348,7 +348,7 @@ form button:hover {
     height: 40px;
     width: 40px;
 
-    background-image: url(/assets/imgs/imgInicioSesion.jpg);
+    background-image: url(/assets/iconos/imgInicioSesion.jpg);
     background-size: cover;         /* Ajusta la imagen para cubrir todo el elemento */
     background-position: center;    /* Centra la imagen */
 }
@@ -463,11 +463,11 @@ a:hover{
 
 /* Estilo individual de cada botón */
 #botonPerfil {
-  background-image: url(/assets/imgs/imgInicioSesion.jpg);
+  background-image: url(/assets/iconos/imgInicioSesion.jpg);
 }
 
 #carrito {
-  background-image: url(/assets/imgs/imgCarrito.jpeg);
+  background-image: url(/assets/iconos/imgCarrito.jpeg);
 }
 
 #botonDark {
