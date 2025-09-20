@@ -539,13 +539,25 @@ a:hover{
   z-index: 1000;
 }
 
+.no-scroll{
+  overflow: hidden;
+}
+
+.desplazar{
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 540px;
+  right: -5px;
+  z-index: 1001;
+}
+
 /* breakPoint Celular */
 @media (max-width: 480px){
   #encabezado{
     display: flex;
     justify-content: center;
-    align-items: center;
-  }
+  align-items: center;  }
 
   .iconos-header{
     display: flex;
@@ -607,5 +619,35 @@ a:hover{
   .mostrarProducto{
     display: flex;
     flex-direction: column;
+  }
+}
+
+/* BreakPoint Table */
+@media (min-width: 481px) and (max-width: 768px){
+  #IdHeader{
+    margin: 0px;
+    padding: 5px;
+  }
+
+  #productos{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+
+  .iconos-header{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 465px;
+    right: -25px;
+    z-index: 1001;
+  }
+
+  #botonDark{
+    right: 6px;
+    height: 40px;
+    width: 40px;
+    z-index: 1001;
   }
 }

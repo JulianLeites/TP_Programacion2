@@ -198,21 +198,23 @@ const botones = mainHeader.querySelector(".iconos-header")
 // const nav = document.getElementById("nav");
 
 const navClonado = nav.cloneNode(true);
-const botonesClonados = botones.cloneNode(true)
+// const botonesClonados = botones.cloneNode(true)
 // const carritoClonado = carrito.cloneNode(true);
 // const perfilClonado = perfil.cloneNode(true)
 
 secHeader.appendChild(navClonado);
-secHeader.appendChild(botonesClonados)
+// secHeader.appendChild(botonesClonados)
 // ubiBotones.appendChild(carritoClonado);
 // ubiBotones.appendChild(perfilClonado);
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if(entry.isIntersecting){
-            secHeader.style.display = "none"
+            secHeader.style.display = "none";
+            botones.classList.remove("desplazar");
         } else {
-            secHeader.style.display = "block"
+            secHeader.style.display = "block";
+            botones.classList.add("desplazar");
         }
     })
 })

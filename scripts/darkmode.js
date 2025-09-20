@@ -6,9 +6,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (modoGuardado === "activado") {
     document.body.classList.add("dark-mode");
-    botonDark.textContent = "☀️"; 
+    botonDark.textContent = "☀️";
+    botonDark.style.backgroundColor = "#121212"
   } else {
     botonDark.textContent = "🌙";
+    botonDark.style.backgroundColor = "rgb(179, 177, 196)"
   }
 
   // Cambiar modo
@@ -17,9 +19,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (document.body.classList.contains("dark-mode")) {
       botonDark.textContent = "☀️";
+      botonDark.style.backgroundColor = "#121212"
       localStorage.setItem("modoOscuro", "activado");
     } else {
       botonDark.textContent = "🌙";
+      botonDark.style.backgroundColor = "rgb(179, 177, 196)"
       localStorage.setItem("modoOscuro", "desactivado");
     }
   });

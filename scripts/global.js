@@ -26,11 +26,11 @@ perfil.addEventListener('click', () => {
         inicioSesion.style.display = "block";
         incioFallido.style.display = 'none'
         overlay.style.display = "block";
+        document.body.classList.add("no-scroll");
     } else {
         inicioSesion.style.display = "none";
         overlay.style.display = "none";
-        
-        
+        document.body.classList.remove("no-scroll");
     }
 })
 
@@ -42,6 +42,7 @@ cerrarIni.addEventListener('click', () => {
     } else {
         inicioSesion.style.display = 'none';
         overlay.style.display = "none";
+        document.body.classList.remove("no-scroll");
     }
 })
 
@@ -53,6 +54,7 @@ cerrarReg.addEventListener('click', () => {
     } else {
         registrar.style.display = 'none';
         overlay.style.display = "none";
+        document.body.classList.remove("no-scroll");
     }
 })
 
