@@ -14,7 +14,7 @@ JavaScript
 LocalStorage para persistencia de datos
 
 Instrucciones para ejecutarlo
-1- Clonar este repositorio o descargarlo en tu PC.  https://github.com/JulianLeites/TP_Programacion2.git
+1- Clonar este repositorio o descargarlo en tu PC y abrir la carpeta con visual.  https://github.com/JulianLeites/TP_Programacion2.git
 2- Abrir el archivo index.html en tu navegador.
 3- Navegar por el catálogo, secciones, probar el carrito de compras y el sistema de inicio de sesión.
 4- Para entrar a la pagina de contacto se debe ingresar desde el Footer
@@ -29,6 +29,8 @@ Instrucciones para ejecutarlo
 FUNCIONALIDADES IMPLEMENTADAS y EXTRAS
 
 -Catálogo de productos con 9 artículos (nombre, precio e imagen).
+
+-Carrusel con ofertas.
 
 -Carrito de compras:
 Agregar productos con cantidad seleccionada.
