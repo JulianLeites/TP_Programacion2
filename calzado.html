@@ -9,7 +9,7 @@
     <link rel="website icon" type="webp" href="assets/imgs/IMAGENPAGINA.webp">
 </head>
 <body>
-      <!-- Carrito -->
+  <!-- Carrito -->
   <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
     <div class="offcanvas-header">
       <h5 class="offcanvas-title" id="offcanvasRightLabel"></h5>
@@ -22,7 +22,7 @@
   </div>
 
   <!-- Cuadro Inicio Sesion -->
-  <div id="overlay"></div>
+   <div id="overlay"></div>
   <section id="inicioSesion">
     <form id="formInicioSesion">
       <div id="cerrarIni" class="cerrarIS">❌</div>
@@ -31,6 +31,7 @@
       <label for="password">Contraseña</label>
       <input type="password" name="password" required id="passIngresada">
       <input type="submit">
+      <p id="inicioFallido"></p>
       <p class="msjCambio">Si no tienes cuenta <span class="botonCambio"> Registrate </span></p>
     </form>
   </section>
@@ -53,7 +54,7 @@
         <input type="email" name="mail" required id="email">
 
         <label for="confEmail">Comfimar E-mail</label>
-        <input type="email" name="confEmail" required>
+        <input type="email" name="confEmail" required id="confEmail">
       </div>
 
       <div class="comp">
@@ -61,36 +62,37 @@
         <input type="password" name="password" required id="password">
 
         <label for="confPass">Confirmar contraseña</label>
-        <input type="password" name="confPass" required>
+        <input type="password" name="confPass" required id="confPass">
       </div>
 
       <div class="terms">
-        <input type="checkbox" required>
+        <input type="checkbox" id="termsConds">
         <p>Aceptar Terminos y Condiciones</p>
       </div>
 
       <input type="submit">
+      <p id="mensajeError"></p>
       <p class="msjCambio">Si ya tienes cuenta <span class="botonCambio"> Inicia Sesion </span></p>
     </form>
   </section>
 
-    <header>
-        <section id="encabezado">
-            <h1 id="IdHeader">
-            <a href="index.html">E-Commerce</a></h1>
-            <div class="iconos-header">
-              <button id="botonPerfil" aria-label="Iniciar sesión"></button>
-              <button id="carrito" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" aria-label="Carrito"></button>
-            </div>     
-        </section>
-        <nav>
-            <ul>
-                <li><a href="indumentaria.html">Indumentaria</a></li>
-                <li><a href="calzado.html">Calzado</a></li>
-                <li><a href="accesorios.html">Accesorios</a></li>
-            </ul>
-        </nav>
-    </header>
+  <!-- Header -->
+  <header id="mainHeader">
+    <section id="encabezado">
+      <h1 id="IdHeader"><a href="index.html">E-Commerce</a></h1>
+      <div class="iconos-header">
+        <button id="botonPerfil" aria-label="Iniciar sesión"></button>
+        <button id="carrito" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" aria-label="Carrito"></button>
+      </div>     
+    </section>
+    <nav id="nav">
+      <ul>
+        <li><a href="indumentaria.html">Indumentaria</a></li>
+        <li><a href="calzado.html">Calzado</a></li>
+        <li><a href="accesorios.html">Accesorios</a></li>
+      </ul>
+    </nav>
+  </header>
     <main>
       <h2 class="subtitulo">Calzado</h2>
         <section id="productos">
