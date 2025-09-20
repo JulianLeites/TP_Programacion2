@@ -14,6 +14,8 @@ if(producto) {
         <h3>${producto.nombre}</h3>
         <p>${producto.descripcion}</p>
         <span class="precio"> $${producto.precio}</span>
+        <p class="descripcion">${producto.descripcion}</p>
+        <span> $${producto.precio}</span>
     `;
     imagen.innerHTML = `
         <img src="${producto.imagen}" class="imgProdInd">

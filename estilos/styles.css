@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Nanum+Brush+Script&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Nanum+Brush+Script&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Nanum+Brush+Script&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 :root{
   --color-bg:#8f8bd8;
   --bg-principal: #AFADDB;
@@ -27,19 +31,29 @@ body{
 }
 
 footer  {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 li{
   list-style: none;
-  padding-left: 15px;
-  padding-bottom: 15px;
+}
+
+h1{
+  font-family: 'Playfair Display', serif;
 }
 
 
 h2{
     text-align: center;
-  }
+    font-family: 'Poppins', sans-serif;
+}
+
+.descripcion{
+  font-family: 'Roboto', sans-serif;
+}
 
 #encabezado{
     display: grid;
@@ -122,7 +136,7 @@ h2{
     width: 40px;
     height: 40px;
     border-radius: 100%;
-    background-image: url(/assets/imgs/imgCarrito.jpeg);
+    background-image: url(/assets/iconos/imgCarrito.jpeg);
     background-size: cover;         /* Ajusta la imagen para cubrir todo el elemento */
     background-position: center;    /* Centra la imagen */
 }
@@ -349,7 +363,7 @@ form button:hover {
     height: 40px;
     width: 40px;
 
-    background-image: url(/assets/imgs/imgInicioSesion.jpg);
+    background-image: url(/assets/iconos/imgInicioSesion.jpg);
     background-size: cover;         /* Ajusta la imagen para cubrir todo el elemento */
     background-position: center;    /* Centra la imagen */
 }
@@ -464,11 +478,11 @@ a:hover{
 
 /* Estilo individual de cada botón */
 #botonPerfil {
-  background-image: url(/assets/imgs/imgInicioSesion.jpg);
+  background-image: url(/assets/iconos/imgInicioSesion.jpg);
 }
 
 #carrito {
-  background-image: url(/assets/imgs/imgCarrito.jpeg);
+  background-image: url(/assets/iconos/imgCarrito.jpeg);
 }
 
 #botonDark {
