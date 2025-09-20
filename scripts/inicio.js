@@ -210,10 +210,14 @@ function calcularTotal(){
     })
     if(acumuladorTotal === 0){
         totalCarrito.textContent = `Aún no hay productos en el carrito`
+        if(document.getElementById("comprar")){
+            document.getElementById("comprar").remove()
+            banderaCompra = 0
+        }
     }
     else{
         totalCarrito.textContent = `Total: $${acumuladorTotal}`
-        if(banderaCompra === 0){
+        if(banderaCompra === 0 && contadorProducto != 0){
             const li = document.createElement("li")
             li.textContent = `Comprar`
             li.id = 'comprar'

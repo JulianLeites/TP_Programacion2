@@ -209,6 +209,10 @@ function calcularTotal(){
     })
     if(acumuladorTotal === 0){
         totalCarrito.textContent = `Aún no hay productos en el carrito`
+        if(document.getElementById("comprar")){
+            document.getElementById("comprar").remove()
+            banderaCompra = 0
+        }
     }
     else{
         totalCarrito.textContent = `Total: $${acumuladorTotal}`
