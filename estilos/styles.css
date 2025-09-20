@@ -151,7 +151,7 @@ li{
     border: solid 1px black;
     border-radius: 10px;
     height: 300px;
-    width: 275px;
+    width: 320px;
     background-color: var(--color-carta);
     margin-left: 5px;
     margin-right: 5px;
@@ -206,6 +206,8 @@ li{
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
     width: 90%;
     border: solid black 1px;
     border-radius: 10px;
@@ -563,15 +565,13 @@ a:hover{
     display: flex;
     flex-direction: column;
     position: fixed;
-    top: 540px;
-    right: -20px;
+    top: 475px;
+    right: -25px;
     z-index: 1001;
   }
 
   #botonDark{
-    position: fixed;
-    top: 485px;
-    right: 10px;
+    right: 6px;
     height: 40px;
     width: 40px;
     z-index: 1001;
@@ -646,6 +646,29 @@ a:hover{
 
   #botonDark{
     right: 6px;
+    height: 40px;
+    width: 40px;
+    z-index: 1001;
+  }
+}
+
+/* BreakPoint Laptop */
+@media (min-width: 769px) and (max-width: 992px){
+  .carta{
+    width: 290px;
+  }
+  
+  .desplazar{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 465px;
+    right: -20px;
+    z-index: 1001;
+  }
+
+  #botonDark{
+    right: 10px;
     height: 40px;
     width: 40px;
     z-index: 1001;
