@@ -31,13 +31,14 @@ body{
 }
 
 footer  {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 li{
   list-style: none;
-  padding-left: 15px;
-  padding-bottom: 15px;
 }
 
 h1{
