@@ -2,13 +2,13 @@ const productos = [
     //Indumentaria
     {
         id: 1,
-        nombre: "Remera Adidas Codes Photoreal Estampada",
+        nombre: "Remera Adidas Codes Estampada",
         precio: 40000,
         color: "Blanco",
         descripcion: "Con esta remera adidas la nostalgia se apoderará de vos. Es un homenaje a la cultura del básquet que te transporta de regreso a la época dorada. Luce una impresión fotorrealista que cobra vida mediante una mezcla de estilos de estampado. Su tejido de algodón suave la convertirá en una de tus remeras favoritas.",
         categoria: "Indumentaria",
         subcategoria: "Remeras",
-        imagen: "",
+        imagen: "assets/imgs/Camiseta_Estampada.webp",
     },
     {
         id: 2,
@@ -18,17 +18,17 @@ const productos = [
         descripcion: "Nuestros pantalones Club Fleece clásicos están confeccionados para ofrecer una comodidad suave y un estilo sencillo. Los puños de los tobillos cuentan con cordones elásticos regulables, por lo que puedes ceñirlos para protegerte del aire fresco o presumir tuszapatillas.",
         categoria: "Indumentaria",
         subcategoria: "Pantalones",
-        imagen: "",
+        imagen: "assets/imgs/Nike_Club.webp",
     },
     {
         id: 3,
-        nombre: "Campera de entrenamiento Puma FLEX STRETCH",
+        nombre: "Campera rompeviento PUMATECH",
         precio: 120000,
         color: "negro",
-        descripcion: "Movete libremente con esta campera de entrenamiento, que presenta un corte regular de alto rendimiento y líneas ergonómicas. Además, le incorporamos tecnología dryCELL para absorber la humedad y puños elásticos. Esta campera le sigue el ritmo a tu estilo de vida activo, en tus rutinas del gimnasio y en los paseos por la ciudad.",
+        descripcion: "Hacele frente a las inclemencias del tiempo con esta campera rompeviento de PUMA. Cuenta con un ícono PUMA Cat de goma en el pecho, capucha ajustable y bolsillos laterales con cierre para mantener tus pertenencias seguras. Además, los puños y la cintura elásticos garantizan un look prolijo. Sentite imparable, sentite PUMA.",
         categoria: "Indumentaria",
         subcategoria: "Camperas",
-        imagen: "",
+        imagen: "assets/imgs/Campera_Puma.webp",
     },
     //Calzado
     {
@@ -39,7 +39,7 @@ const productos = [
         descripcion: "Te has esforzado mucho, ahora lleva el entrenamiento a un nivel superior con las zapatillas de entrenamiento Disperse XT 3, la última actualización de una línea en el nexo de rendimiento y diseño. Esta reinvención de las versiones anteriores cuenta con tracción de goma por zonas para un control adicional y los mismos materiales super livianos para brindar una máxima agilidad. Entrena mejor y más audaz con elementos de diseño más llamativos.",
         categoria: "Calzado",
         subcategoria: "Deportivo",
-        imagen: "",
+        imagen: "assets/imgs/Zapatillas_XT.webp",
     },
     {
         id:5,
@@ -49,17 +49,17 @@ const productos = [
         descripcion: "Las Pegasus Premium potencian amortiguación responsiva con tres capas apiladas de nuestras tecnologías más potentes para correr: ZoomX, una unidada Air Zoom esculpida y espuma ReactX Foam. Las Pegasus más responsivas de la historia: proporcionan un retorno de energía como ningún otro. Con una parte superior más ligera que el aire, disminuyen el peso y aumentan la transpirabilidad para que puedas volar más rápido.",
         categoria: "Calzado",
         subcategoria: "Running",
-        imagen: "",
+        imagen: "assets/imgs/Nike_Pegasus.webp",
     },
     {
         id: 6,
-        nombre: "Botines Predator Elite para terreno firme con lengüeta abatible",
+        nombre: "Botines Predator League Pasto sintético",
         precio: 400000,
         color: "blanco",
-        descripcion: "Descubrí la diferencia entre aspirar a marcar y saber que lo harás con los botines adidas Predator, diseñados para marcar goles. Estos botines Elite tienen un exterior HybridTouch con lengüeta plegable y aletas Strikeskin de caucho que ayudan a proporcionar un contacto perfecto con la pelota. La suela Controlframe 2.0 para terreno firme y el cuello adidas PRIMEKNIT están diseñados para proporcionarte una postura estable cuando la portería está a tu merced.",
+        descripcion: "Comenzá cada partido sabiendo que anotarás con estos botines de fútbol adidas Predator League creados para marcar goles. Presentan un exterior Hybridfeel con textura en 3D e inserciones Strikescale que te proporcionan un control excepcional de la pelota en cada disparo. La suela de caucho estriada te garantiza una excelente tracción en canchas de pasto sintético.",
         categoria: "Calzado",
         subcategoria: "Botines",
-        imagen: "",
+        imagen: "assets/imgs/Botines_Predator.webp",
     },
     //Accesorios
     {
@@ -70,7 +70,7 @@ const productos = [
         descripcion: "Una gorra clásica de seis paneles, reimaginada y personalizada por Mark Gonzales para adidas Skateboarding, la gorra Shmoo Running presenta una estructura de algodón transpirable, tira ajustable y un diseño exclusivo de The Gonz en 3D con relieve y bordado.",
         categoria: "Accesorios",
         subcategoria: "gorras",
-        imagen: "",
+        imagen: "assets/imgs/Gorra_Running.webp",
     },
     {
         id: 8,
@@ -90,6 +90,6 @@ const productos = [
         descripcion: "Esta mochila encarna la audaz filosofía de PUMA.BL. En esta colección, nos sobreponemos a las etiquetas para celebrar a cada individuo por quien es, más allá de juicios y estereotipos. Con una estética elegante y un diseño funcional, esta mochila es tu compañera perfecta para afrontar cada día con confianza y estilo.",
         categoria: "Accesorios",
         subcategoria: "Mochilas",
-        imagen: "",
+        imagen: "assets/imgs/Mochila_Puma.webp",
     },
 ];
