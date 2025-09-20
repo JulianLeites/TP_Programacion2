@@ -12,7 +12,7 @@ const imagen = document.getElementById("imagenesProducto");
 if(producto) {
     contenedor.innerHTML = `
         <h3>${producto.nombre}</h3>
-        <p>${producto.descripcion}</p>
+        <p class="descripcion">${producto.descripcion}</p>
         <span> $${producto.precio}</span>
     `;
     imagen.innerHTML = `
