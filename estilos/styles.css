@@ -36,6 +36,10 @@ li{
   padding-bottom: 15px;
 }
 
+h2{
+    text-align: center;
+  }
+
 #encabezado{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -557,6 +561,13 @@ a:hover{
   z-index: 1001;
 }
 
+#carouselExampleAutoplaying {
+  max-width: 50%;   /* ancho máximo */
+  max-height: auto;  /* alto máximo */
+  margin: 0 auto;     /* centrar horizontalmente */
+  overflow: hidden;   /* recorta lo que sobresalga */
+}
+
 /* breakPoint Celular */
 @media (max-width: 480px){
   #encabezado{
@@ -598,10 +609,6 @@ a:hover{
 
   nav ul{
     gap: 40px;
-  }
-
-  h2{
-    text-align: center;
   }
 
   form{
