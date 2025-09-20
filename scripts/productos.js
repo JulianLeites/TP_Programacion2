@@ -13,7 +13,7 @@ if(producto) {
     contenedor.innerHTML = `
         <h3>${producto.nombre}</h3>
         <p>${producto.descripcion}</p>
-        <span> $${producto.precio}</span>
+        <span class="precio"> $${producto.precio}</span>
     `;
     imagen.innerHTML = `
         <img src="${producto.imagen}" class="imgProdInd">
@@ -28,17 +28,17 @@ const menuCarrito = document.getElementById("menuCarrito")
 const listaCarrito = document.getElementById("listaCarrito");
 const cantidadesGuardadas = JSON.parse(localStorage.getItem("cantidadesProductos")) || []
 const nombresProductos = JSON.parse(localStorage.getItem("productosNombresGuardados")) || []
+const preciosGuardados =  JSON.parse(localStorage.getItem("preciosGuardados")) || []
 const contenidoLista = JSON.parse(localStorage.getItem("contenido")) || []
 let contadorProducto = JSON.parse(localStorage.getItem("cantProductos")) || 0
-
+const totalCarrito = document.getElementById("total")
 cargarLocalStorage()
 botonAgregar.addEventListener('click', () =>{
-    const li = document.createElement("li")
-    // Si el producto ya está en el carrito
+        // Si el producto ya está en el carrito
+ 
         if (nombresProductos.includes(producto.nombre)) {
             // Encontrar el índice del producto repetido
             const index = nombresProductos.findIndex(elemento => elemento === producto.nombre);
-
             // Buscar el li correspondiente en el DOM
             const li = listaCarrito.children[index];
             const span = document.createElement("span")
@@ -47,16 +47,18 @@ botonAgregar.addEventListener('click', () =>{
             // Sumar la nueva cantidad al valor ya guardado
             const nuevaCantidad = cantidadesGuardadas[index] + 1;  
 
-            // Actualizar la cantidad de producto en el localStorage
+            // Actualizar la cantidad en el arreglo
             cantidadesGuardadas[index] = nuevaCantidad;
             localStorage.setItem("cantidadesProductos", JSON.stringify(cantidadesGuardadas))
             // Actualizar el contenido del li con la nueva cantidad
-            li.textContent = `${producto.nombre} - $${producto.precio} x ${nuevaCantidad}`;
+            li.textContent = `${producto.nombre} - ${producto.precio} x ${nuevaCantidad}`;
             
-            
+            preciosGuardados[index] = producto.precio * nuevaCantidad
+            localStorage.setItem("preciosGuardados", JSON.stringify(preciosGuardados))
             contenidoLista[index] = li.textContent
             li.insertBefore(span, li.firstChild);
             localStorage.setItem("contenido", JSON.stringify(contenidoLista))
+            
           
 
         } else {
@@ -64,6 +66,8 @@ botonAgregar.addEventListener('click', () =>{
             contadorProducto++; // Aumenta cada vez que se agrega algo al carrito
             nombresProductos.push(producto.nombre);
             cantidadesGuardadas.push(1);  // Guardamos la cantidad de este nuevo producto
+            preciosGuardados.push(producto.precio * 1)
+            localStorage.setItem("preciosGuardados", JSON.stringify(preciosGuardados))
             localStorage.setItem("productosNombresGuardados", JSON.stringify(nombresProductos));
             localStorage.setItem("cantidadesProductos", JSON.stringify(cantidadesGuardadas))
             
@@ -72,7 +76,7 @@ botonAgregar.addEventListener('click', () =>{
             span.textContent = `X`
             span.classList.add("eliminarProducto")
 
-            li.textContent = `${producto.nombre} - $${producto.precio} x 1`;
+            li.textContent = `${producto.nombre} - ${producto.precio} x 1`;
             contenidoLista.push(li.textContent);
             li.insertBefore(span, li.firstChild)
             // Guardar el nuevo contenido de la lista en localStorage
@@ -82,9 +86,11 @@ botonAgregar.addEventListener('click', () =>{
             // Añadir el nuevo li a la lista del carrito
             listaCarrito.appendChild(li);
         }
-
+        
         // Actualizar la cantidad de productos en el carrito
         guardarEnLocalStorage("cantProductos", contadorProducto);
+        
+        calcularTotal()
 });
 
 listaCarrito.addEventListener('click', function(e) {
@@ -101,11 +107,12 @@ listaCarrito.addEventListener('click', function(e) {
             contenidoLista.splice(index, 1);
             cantidadesGuardadas.splice(index, 1);
             nombresProductos.splice(index, 1);
-
+            preciosGuardados.splice(index, 1)
             // Guardar en localStorage
             guardarEnLocalStorage("contenido", contenidoLista);
             guardarEnLocalStorage("cantidadesProductos", cantidadesGuardadas);
             guardarEnLocalStorage("productosNombresGuardados", nombresProductos);
+            guardarEnLocalStorage("preciosGuardados", preciosGuardados)
 
             // Eliminar el li visual
             li.remove();
@@ -114,9 +121,9 @@ listaCarrito.addEventListener('click', function(e) {
             contadorProducto--;
             guardarEnLocalStorage("cantProductos", contadorProducto);
 
-            alert("Producto eliminado correctamente");
         }
     }
+    calcularTotal()
 });
 function guardarEnLocalStorage(clave, valor) {
     localStorage.setItem(clave, JSON.stringify(valor));
@@ -132,6 +139,20 @@ function cargarLocalStorage(){
         li.insertBefore(span, li.firstChild)
         listaCarrito.appendChild(li)
     }
+    calcularTotal()
+}
+function calcularTotal(){
+    let acumuladorTotal = 0
+    preciosGuardados.forEach((totalProducto) =>{
+        acumuladorTotal = acumuladorTotal + totalProducto
+    })
+    if(acumuladorTotal === 0){
+        totalCarrito.textContent = `Aún no hay productos en el carrito`
+    }
+    else{
+        totalCarrito.textContent = `Total: $${acumuladorTotal}`
+    }
+   
 }
 // const infoProducto = document.getElementById("infoProductos")
 

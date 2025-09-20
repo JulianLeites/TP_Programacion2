@@ -24,12 +24,13 @@ productos.filter(prod => prod.categoria === "Accesorios").forEach(prod =>{      
 const carrito = document.getElementById("carrito")
 const menuCarrito = document.getElementById("menuCarrito")
 const listaCarrito = document.getElementById("listaCarrito");
+const totalCarrito = document.getElementById("total")
+const preciosGuardados = JSON.parse(localStorage.getItem("preciosGuardados")) || []
 let cant = 1;
 let contadorProducto = JSON.parse(localStorage.getItem("cantProductos")) || 0
  //contador para guardar en orden los productos guardados
 const contenidoLista = JSON.parse(localStorage.getItem("contenido")) || [];
 cargarLocalStorage();
-
 
 
     
@@ -58,7 +59,7 @@ document.querySelectorAll(".agregar").forEach(agregar => {
         const nombre = carta.querySelector(".nombre").textContent;
         const precio = carta.querySelector(".precio").textContent;
         const cantidad = parseInt(carta.querySelector(".cantidad").textContent.trim());
-
+        let precioInt = parseInt(precio.replace('$', ''))//convertimos la cadena a entero, removiendo el signo de pesos
         const producto = new Carrito(nombre, precio, cantidad);
         
         // Si el producto ya está en el carrito
@@ -74,16 +75,18 @@ document.querySelectorAll(".agregar").forEach(agregar => {
             // Sumar la nueva cantidad al valor ya guardado
             const nuevaCantidad = cantidadesGuardadas[index] + cantidad;  
 
-            // Actualizar la cantidad del producto en el localStorage
+            // Actualizar la cantidad en el arreglo
             cantidadesGuardadas[index] = nuevaCantidad;
             localStorage.setItem("cantidadesProductos", JSON.stringify(cantidadesGuardadas))
             // Actualizar el contenido del li con la nueva cantidad
             li.textContent = `${producto.nombre} - ${producto.precio} x ${nuevaCantidad}`;
             
-            
+            preciosGuardados[index] = precioInt * nuevaCantidad
+            localStorage.setItem("preciosGuardados", JSON.stringify(preciosGuardados))
             contenidoLista[index] = li.textContent
             li.insertBefore(span, li.firstChild);
             localStorage.setItem("contenido", JSON.stringify(contenidoLista))
+            
           
 
         } else {
@@ -91,8 +94,12 @@ document.querySelectorAll(".agregar").forEach(agregar => {
             contadorProducto++; // Aumenta cada vez que se agrega algo al carrito
             nombresProductos.push(nombre);
             cantidadesGuardadas.push(cantidad);  // Guardamos la cantidad de este nuevo producto
+            
+            preciosGuardados.push(precioInt * cantidad)
+            localStorage.setItem("preciosGuardados", JSON.stringify(preciosGuardados))
             localStorage.setItem("productosNombresGuardados", JSON.stringify(nombresProductos));
             localStorage.setItem("cantidadesProductos", JSON.stringify(cantidadesGuardadas))
+            
             const li = document.createElement("li");
             const span = document.createElement("span")
             span.textContent = `X`
@@ -108,10 +115,13 @@ document.querySelectorAll(".agregar").forEach(agregar => {
             // Añadir el nuevo li a la lista del carrito
             listaCarrito.appendChild(li);
         }
-
+        
         // Actualizar la cantidad de productos en el carrito
         guardarEnLocalStorage("cantProductos", contadorProducto);
+        
+        calcularTotal()
     });
+
 
 });
 
@@ -129,11 +139,12 @@ listaCarrito.addEventListener('click', function(e) {
             contenidoLista.splice(index, 1);
             cantidadesGuardadas.splice(index, 1);
             nombresProductos.splice(index, 1);
-
+            preciosGuardados.splice(index, 1)
             // Guardar en localStorage
             guardarEnLocalStorage("contenido", contenidoLista);
             guardarEnLocalStorage("cantidadesProductos", cantidadesGuardadas);
             guardarEnLocalStorage("productosNombresGuardados", nombresProductos);
+            guardarEnLocalStorage("preciosGuardados", preciosGuardados)
 
             // Eliminar el li visual
             li.remove();
@@ -142,9 +153,9 @@ listaCarrito.addEventListener('click', function(e) {
             contadorProducto--;
             guardarEnLocalStorage("cantProductos", contadorProducto);
 
-            alert("Producto eliminado correctamente");
         }
     }
+    calcularTotal()
 });
 
 
@@ -183,5 +194,21 @@ function cargarLocalStorage(){
       
         li.insertBefore(span, li.firstChild)
         listaCarrito.appendChild(li)
+
     }
+    calcularTotal()
+}
+function calcularTotal(){
+    let acumuladorTotal = 0
+    preciosGuardados.forEach((totalProducto) =>{
+        acumuladorTotal = acumuladorTotal + totalProducto
+    })
+    
+        if(acumuladorTotal === 0){
+            totalCarrito.textContent = `Aún no hay productos en el carrito`
+        }
+        else{
+            totalCarrito.textContent = `Total: $${acumuladorTotal}`
+        }
+   
 }
