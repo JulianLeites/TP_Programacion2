@@ -160,7 +160,11 @@ h2{
     max-height: 605px;
     overflow-y: auto;
 }
-
+#comprar{
+  padding-top: 30px;
+  font-weight: 500;
+  cursor: pointer;
+}
 #productos{
     display: grid;
     grid-template-columns: repeat(3, 1fr);

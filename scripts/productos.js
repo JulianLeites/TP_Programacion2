@@ -33,7 +33,9 @@ const nombresProductos = JSON.parse(localStorage.getItem("productosNombresGuarda
 const preciosGuardados =  JSON.parse(localStorage.getItem("preciosGuardados")) || []
 const contenidoLista = JSON.parse(localStorage.getItem("contenido")) || []
 let contadorProducto = JSON.parse(localStorage.getItem("cantProductos")) || 0
+let banderaCompra = 0;
 const totalCarrito = document.getElementById("total")
+const ulCompraTotal = document.getElementById("listaFuncion")
 cargarLocalStorage()
 botonAgregar.addEventListener('click', () =>{
         // Si el producto ya está en el carrito
@@ -131,6 +133,7 @@ function guardarEnLocalStorage(clave, valor) {
     localStorage.setItem(clave, JSON.stringify(valor));
 }
 function cargarLocalStorage(){
+    listaCarrito.innerHTML = ``
     for(let i = 0; i < contadorProducto; i++){
         const li = document.createElement("li");
         const span = document.createElement("span")
@@ -140,11 +143,13 @@ function cargarLocalStorage(){
       
         li.insertBefore(span, li.firstChild)
         listaCarrito.appendChild(li)
+
     }
     calcularTotal()
 }
 function calcularTotal(){
     let acumuladorTotal = 0
+    
     preciosGuardados.forEach((totalProducto) =>{
         acumuladorTotal = acumuladorTotal + totalProducto
     })
@@ -153,9 +158,45 @@ function calcularTotal(){
     }
     else{
         totalCarrito.textContent = `Total: $${acumuladorTotal}`
+        if(banderaCompra === 0){
+            const li = document.createElement("li")
+            li.textContent = `Comprar`
+            li.id = 'comprar'
+            ulCompraTotal.appendChild(li)
+            banderaCompra = 1
+            document.getElementById("comprar").addEventListener('click', () =>{ 
+                //eliminar visualmebte
+                listaCarrito.innerHTML = ``
+
+                // Eliminar de arrays
+                contenidoLista.splice(0, contenidoLista.length)
+                cantidadesGuardadas.splice(0, cantidadesGuardadas.length)
+                nombresProductos.splice(0, nombresProductos.length)
+                preciosGuardados.splice(0, preciosGuardados.length)
+                //eliminar los productos distintos
+                contadorProducto = 0
+                // Guardar en localStorage
+                guardarEnLocalStorage("cantProductos", contadorProducto)
+                guardarEnLocalStorage("contenido", contenidoLista);
+                guardarEnLocalStorage("cantidadesProductos", cantidadesGuardadas);
+                guardarEnLocalStorage("productosNombresGuardados", nombresProductos);
+                guardarEnLocalStorage("preciosGuardados", preciosGuardados)
+
+                // Eliminar el botón de compra
+                li.remove();
+
+                // Actualizar contador y guardarlo
+                contadorProducto = 0;
+                guardarEnLocalStorage("cantProductos", contadorProducto);
+                //volver a mostrar el mensaje "Aún no hay productos en el carrito"
+                calcularTotal()
+                banderaCompra = 0 //el botón de compra puede volver a aparecer luego de haberse eliminado
+                
+            })
+        }   
     }
-   
 }
+
 // const infoProducto = document.getElementById("infoProductos")
 
 // productos.forEach(producto => {
