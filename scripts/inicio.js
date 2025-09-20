@@ -260,18 +260,12 @@ const mainHeader = document.getElementById("mainHeader");
 const secHeader = document.getElementById("secHeader");
 const ubiBotones = document.getElementById("secHeaderBotones")
 const botones = mainHeader.querySelector(".iconos-header")
-// const perfil = document.getElementById("botonPerfil");
-// const nav = document.getElementById("nav");
 
 const navClonado = nav.cloneNode(true);
-// const botonesClonados = botones.cloneNode(true)
-// const carritoClonado = carrito.cloneNode(true);
-// const perfilClonado = perfil.cloneNode(true)
+
 
 secHeader.appendChild(navClonado);
-// secHeader.appendChild(botonesClonados)
-// ubiBotones.appendChild(carritoClonado);
-// ubiBotones.appendChild(perfilClonado);
+
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
